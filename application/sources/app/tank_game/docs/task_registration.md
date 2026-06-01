@@ -45,13 +45,15 @@ enum {
     /* EOT task ID (End of Table) */
     AK_TASK_EOT_ID, // MUST remain at the absolute bottom
 };
+```
 
 STEP 2: Declare the C-Compatible Task Handler Interface (task_list.h)
 
 Because the Active Kernel core is compiled using standard C calling conventions, but game modules may be implemented using C++ source properties, explicit Linkage Declarations are required.
-
 At the bottom of task_list.h, enclose the handler function prototypes inside an #ifdef __cplusplus / extern "C" guard wrapper to avoid symbol name mangling during compilation links.
 
+
+```c
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -72,12 +74,12 @@ extern void task_trap_handle(ak_msg_t *msg);
 #ifdef __cplusplus
 }
 #endif
-
+```
 STEP 3: Bind Array Mapping inside the Master Dispatch Table (task_list.cpp)
 
 Open task_list.cpp and locate the immutable scheduling dispatch matrix named const task_t app_task_table[]. Every record entry instantiated within this table binds the Task ID, Execution Priority Level, and the targeted Callback Handler Entry Point.
-
 Insert the Tank Game definitions array segment exactly prior to the terminal sentinel element {AK_TASK_EOT_ID, TASK_PRI_LEVEL_0, (pf_task)0}:
+```c
 
 const task_t app_task_table[] = {
     /* ... Pre-existing Core App Tasks Rows ... */
@@ -104,3 +106,4 @@ const task_t app_task_table[] = {
     /*************************************************************************/
     {AK_TASK_EOT_ID             ,   TASK_PRI_LEVEL_0    ,   (pf_task)0          }
 };
+```
