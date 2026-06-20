@@ -1,18 +1,21 @@
 
 
-https://github.com/user-attachments/assets/0a2d2ca1-4aab-4f7d-9217-8a006b4d772b
+
+https://github.com/user-attachments/assets/752cf87b-a4f8-44cc-a2c0-bafe41e82939
+
+
 
 
 
 ## TANK GAME DEMO - AKOS -STM32L151
-1. HOW TO RUN:
+**1. HOW TO RUN:**
    - You must have Linux Ubuntu 18.0 or higher version.
    - Download tools in this link: https://drive.google.com/drive/folders/1kSQ9S4XNHiIrw46Rf3TwaD6hfZZorSzw?usp=drive_link
    - Put the "workspace" folder in your Home folder. And all tools in that workspace folder. If you do right then no need for edit Makefile.
    - Open terminal, and go to folder application by command:  cd . May your folder will at "TankGame_embedded/application" where have a Makefile.
    - Build and run by command:  sudo make flash dev=/dev/ttyUSB0
-     
-3. GAMEPLAY:
+
+**2. GAMEPLAY:**
    - You have 1 tank with 1 live point (HP). Your mission is move and destroy enemies get about 250 point and destroy the big BOSS.
    - Use button UP and DOWN to move your tank, try avoid hit by enemies.
    - Use Mode button for tank fire cannon, it will take 50ms for reload next cannon bullet.
@@ -22,17 +25,17 @@ https://github.com/user-attachments/assets/0a2d2ca1-4aab-4f7d-9217-8a006b4d772b
       <img width="700" height="" src="https://i.postimg.cc/brBvWn91/Screenshot-2026-05-18-143159.jpg"/>
    </div>
 
-4. USE CASE:
+**3. USE CASE:**
    <div align="center">
    <img width="700" height="" src="https://i.postimg.cc/CLYjjsDC/user-case.png"/>
    </div>
 
-5. Overall:
+**4. OVERALL:**
    <div align="center">
    <img width="700" height="" alt="Screenshot 2026-05-23 122801" src="https://github.com/user-attachments/assets/a588e88e-406c-417a-86dd-d25ba867cfba" />
    </div>
-   
-6. Main Sequential Flow:
+
+**5. MAIN SEQUENTIAL FLOW:**
 
    Player → Tank: Send movement or fire commands.
 
@@ -51,59 +54,68 @@ https://github.com/user-attachments/assets/0a2d2ca1-4aab-4f7d-9217-8a006b4d772b
    Game Engine → EEPROM: Save score upon victory.
    
    Game Engine → Menu Screen: Display top score, restart or exit options.
-
    
 
-7. CASE VICTORY SEQUENCE:
+**6. CASE VICTORY SEQUENCE:**
 <div align="center">
 <img width="700" height="" alt="Screenshot 2026-05-23 123852" src="https://github.com/user-attachments/assets/4f064502-7415-4f96-81fa-54198e93f4bb" />
 </div>
 
-7. CASE GAMEOVER SEQUENCE:
+
+**7. CASE GAMEOVER SEQUENCE:**
 <div align="center">
 <img width="700" height="" alt="gameover" src="https://github.com/user-attachments/assets/d2dcc6aa-bce2-4329-b02a-14a54ff68a00" />
 </div>
 
-8. GAMEPLAY SEQUENCE:
+
+**8. GAMEPLAY SEQUENCE:**
 <div align="center">
 <img width="700" height="" alt="sequenceDiagram" src="https://github.com/user-attachments/assets/0eb040e5-76dc-4d22-af58-050e429d48e6" /><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="1917.316850081621" height="1791.4943114520001"></svg>
 </div>
 
-9. BITMAP DATA:
+
+**9. BITMAP DATA:**
 
    Download link: https://drive.google.com/drive/folders/1s_6J5NmODzScs4ymTYlF7k-WHXQxQIwn?usp=drive_link
    
    Document: [application/sources/app/tank_game/docs/screens_bitmap.md
 ](https://github.com/thuanchung85/TankGame_embedded/blob/AK_TASK_EVENT_BASE/application/sources/app/tank_game/docs/screens_bitmap.md)
 
-11. SOURCE CODE:
+
+**10. SOURCE CODE:**
     in folder: application/sources/app/tank_game
        - bitmap_data: The location where bitmap data of game objects is stored.
        - game_objects: This is where all the game objects are located, such as the player's tank, enemy objects like soldiers, mines, tanks, planes, boss enemies, various types of trees, mountains, buildings, and the ground. It also contains bullets and booby trap rockets.
        - game_screens: This area contains three game screens: the game banner with the game menu, the main game screen, and the top score screen, gameover, victory screen.
        - other_screens: some info , QR code screen.
+
       
-12. GAME SCREENS, and SCORE SYSTEM:
+**11. GAME SCREENS, and SCORE SYSTEM:**
 [    application/sources/app/tank_game/docs/game_screens_and_score_system.md
 ](https://github.com/thuanchung85/TankGame_embedded/blob/AK_TASK_EVENT_BASE/application/sources/app/tank_game/docs/game_screens_and_score_system.md)
+
     
-14. PARALLAX VIEW:
+**12. PARALLAX VIEW:**
 [    application/sources/app/tank_game/docs/parallax_view.md
 ](https://github.com/thuanchung85/TankGame_embedded/blob/AK_TASK_EVENT_BASE/application/sources/app/tank_game/docs/parallax_view.md)
+
     
-16. TANK:
+**13. TANK:**
 [    application/sources/app/tank_game/docs/tank_object.md
 ](https://github.com/thuanchung85/TankGame_embedded/blob/AK_TASK_EVENT_BASE/application/sources/app/tank_game/docs/tank_object.md)
 
-18. ENEMIES, and TRAP:
+
+**14. ENEMIES, and TRAP:**
 [   application/sources/app/tank_game/docs/enemy_trap_objects.md
 ](https://github.com/thuanchung85/TankGame_embedded/blob/AK_TASK_EVENT_BASE/application/sources/app/tank_game/docs/enemy_trap_objects.md)
 
-20. BOSS:
+
+**15. BOSS:**
 [    application/sources/app/tank_game/docs/boss_objects.md
 ](https://github.com/thuanchung85/TankGame_embedded/blob/AK_TASK_EVENT_BASE/application/sources/app/tank_game/docs/boss_objects.md)
 
-21. TASK LIST:
+
+**16. TASK LIST:**
     https://github.com/thuanchung85/TankGame_embedded/blob/AK_TASK_EVENT_BASE/application/sources/app/tank_game/docs/task_registration.md
     
 ## AK Embedded Base Kit - STM32L151 - Lập trình nhúng vi điều khiển
@@ -128,15 +140,4 @@ AK Embedded Base Kit is an evaluation kit for advanced embedded software learner
 ak_flash /dev/ttyUSB0 ak-base-kit-stm32l151-application.bin 0x08003000
 ```
 
-### Hardware
-**Schematic** [[schematic-ak-embedded-base-kit-version-3.pdf]](https://github.com/ak-embedded-software/ak-base-kit-stm32l151/blob/main/hardware/schematic/schematic-ak-embedded-base-kit-version-3.pdf)
 
-[<img src="hardware/images/board-view-top.png" width="480"/>](https://epcb.vn/products/ak-embedded-base-kit-lap-trinh-nhung-vi-dieu-khien-mcu)
-
-[<img src="hardware/images/board-view-bottom.png" width="480"/>](https://epcb.vn/products/ak-embedded-base-kit-lap-trinh-nhung-vi-dieu-khien-mcu)
-
-### Reference
-| Topic | Link |
-| ------ | ------ |
-| Blog & Tutorial | https://epcb.vn/blogs/ak-embedded-software |
-| Where to buy KIT? | https://epcb.vn/products/ak-embedded-base-kit-lap-trinh-nhung-vi-dieu-khien-mcu |
